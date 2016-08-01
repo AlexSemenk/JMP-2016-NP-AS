@@ -1,0 +1,14 @@
+package com.epam.jmp.classloader;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class StatelessClassLoaderTest {
+
+	@Test
+	public void testStringIsStateless() {
+		assertTrue("String class isn't stateless", StatelessClassLoader.isStateless(String.class));
+	}
+	
+}

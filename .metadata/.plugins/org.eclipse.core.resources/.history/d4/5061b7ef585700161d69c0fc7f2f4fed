@@ -1,0 +1,39 @@
+package com.epam.jmp.classloader;
+
+import static org.junit.Assert.assertNotNull;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class StatelessClassLoaderTest {
+	
+	private static ClassLoader classloader;
+	
+	@BeforeClass
+	public static void initClassloader() {
+		classloader = new StatelessClassLoader("stateless-classloader-test-jar.jar");
+	}
+	
+	@Test
+	public void testLoadsMoneyClass() throws ClassNotFoundException {
+		assertNotNull(classloader.loadClass("com.epam.jmp.classloader.test.Money"));
+	}
+	
+	@Test
+	public void testLoadsRandomUtilsClass() throws ClassNotFoundException {
+		assertNotNull(classloader.loadClass("com.epam.jmp.classloader.test.RandomUtils"));
+	}
+	
+	@Test(expected = ClassNotFoundException.class)
+	public void testDoesNotLoadMutableIntegerClass() throws ClassNotFoundException {
+		classloader.loadClass("com.epam.jmp.classloader.test.MutableInteger");
+	}
+	
+	@Test(expected = ClassNotFoundException.class)
+	public void testDoesNotLoadExtendedMutableIntegerClass() throws ClassNotFoundException {
+		assertNotNull(classloader.loadClass("com.epam.jmp.classloader.test.ExtendedMutableInteger"));
+	}
+	
+	
+	
+}

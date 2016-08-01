@@ -1,0 +1,21 @@
+package com.epam.jmp.classloader;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+
+public class ClassUtils {
+
+	static boolean isStateless(Class<?> clazz) {
+		Field[] fields = clazz.getDeclaredFields();
+		for(Field field : fields) {
+			int fieldModifiers = field.getModifiers();
+			boolean isFinal = (fieldModifiers & Modifier.FINAL) == Modifier.FINAL;
+			boolean isStatic = (fieldModifiers & Modifier.STATIC) == Modifier.STATIC;
+			if(!isFinal && !isStatic) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+}

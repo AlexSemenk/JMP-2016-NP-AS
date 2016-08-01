@@ -1,0 +1,25 @@
+package com.epam.jmp.classloader;
+
+import static org.junit.Assert.*;
+
+import java.lang.reflect.InvocationTargetException;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class StatelessClassLoaderTest {
+	
+	private static ClassLoader classloader;
+	
+	@BeforeClass
+	public static void initClassloader() {
+		classloader = new StatelessClassLoader("stateless-classloader-test-jar.jar");
+	}
+	
+	@Test
+	public void testLoadsImmutableMoneyClass() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+		Object o = classloader.loadClass("com.epam.jmp.classloader.test.Money").getConstructor(Integer.class).newInstance(10);
+		assertNotNull(classloader.loadClass("com.epam.jmp.classloader.test.Money"));
+	}
+	
+}

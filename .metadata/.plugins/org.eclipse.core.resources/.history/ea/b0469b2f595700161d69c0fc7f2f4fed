@@ -1,0 +1,13 @@
+package com.epam.jmp.classloader.test;
+
+public class ExtendedMutableInteger extends MutableInteger {
+
+	public void inc() {
+		this.setValue(this.getValue() + 1);
+	}
+	
+	public void dec() {
+		this.setValue(this.getValue() - 1);
+	}
+	
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="StatelessClassLoaderTest" project="stateless-classloader" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="com.epam.jmp.classloader.StatelessClassLoaderTest" time="2.411">
+    <testcase name="testLoadsMathConstantsClass" classname="com.epam.jmp.classloader.StatelessClassLoaderTest" time="0.0"/>
+    <testcase name="testDoesNotLoadMutableIntegerClass" classname="com.epam.jmp.classloader.StatelessClassLoaderTest" time="2.388"/>
+    <testcase name="testLoadsRandomUtilsClass" classname="com.epam.jmp.classloader.StatelessClassLoaderTest" time="0.014"/>
+    <testcase name="testLoadsMoneyClass" classname="com.epam.jmp.classloader.StatelessClassLoaderTest" time="0.005"/>
+    <testcase name="testLoadsStaticCounterClass" classname="com.epam.jmp.classloader.StatelessClassLoaderTest" time="0.004"/>
+  </testsuite>
+</testrun>

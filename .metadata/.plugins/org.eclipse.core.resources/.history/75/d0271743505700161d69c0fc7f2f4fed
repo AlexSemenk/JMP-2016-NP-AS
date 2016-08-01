@@ -1,0 +1,7 @@
+package com.epam.jmp.classloader.test;
+
+public class ExtendedJavaBean extends JavaBean {
+
+	private static final long serialVersionUID = 2L;
+
+}

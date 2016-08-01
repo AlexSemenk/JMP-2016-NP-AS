@@ -1,0 +1,26 @@
+package com.epam.jmp.classloader;
+
+import static org.junit.Assert.*;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class StatelessClassLoaderTest {
+	
+	private static ClassLoader classloader;
+	
+	@BeforeClass
+	public static void initClassloader() {
+		classloader = new StatelessClassLoader("stateless-classloader-test-jar.jar");
+	}
+	
+	@Test
+	public void testLoadsImmutableMoneyClass() {
+		try {
+			assertNotNull(classloader.loadClass("com.epam.jmp.classloader.test.Money"));
+		} catch (ClassNotFoundException e) {
+			fail();
+		}
+	}
+	
+}

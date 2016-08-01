@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;stateless-classloader-test-jar&apos; to &apos;stateless-classloader-test-data&apos;" description="Rename resource &apos;stateless-classloader-test-jar&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/stateless-classloader-test-jar" name="stateless-classloader-test-data" stamp="1469995265561" updateReferences="true"/>
+</session>

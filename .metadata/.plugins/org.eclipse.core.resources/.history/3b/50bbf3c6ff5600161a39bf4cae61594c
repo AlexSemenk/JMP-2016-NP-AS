@@ -1,0 +1,24 @@
+package com.epam.jmp.classloader.test;
+
+public class KeyValue {
+
+	private String key;
+	private String value;
+
+	public String getName() {
+		return key;
+	}
+
+	public void setName(String name) {
+		this.key = name;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+}
