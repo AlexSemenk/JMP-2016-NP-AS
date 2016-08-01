@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete element from project &apos;stateless-classloader-test-data&apos;&#x0D;&#x0A;- Original project: &apos;stateless-classloader-test-data&apos;&#x0D;&#x0A;- Original element: &apos;com.epam.jmp.classloader.test.RandomUtils.java&apos;" description="Delete element" element1="/src\/main\/java&lt;com.epam.jmp.classloader.test{RandomUtils.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1470034452969" subPackages="false" version="1.0"/>
-</session>

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename Java project &apos;library-io&apos; to &apos;library-stat&apos;&#x0D;&#x0A;- Original element: &apos;library-io&apos;&#x0D;&#x0A;- Renamed element: &apos;library-io&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;library-io&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=library-io" name="library-stat" references="true" stamp="1468432427207" version="1.0"/>
-</session>

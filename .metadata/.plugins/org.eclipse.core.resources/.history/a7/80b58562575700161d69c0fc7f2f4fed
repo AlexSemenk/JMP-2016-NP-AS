@@ -1,7 +1,0 @@
-package com.epam.jmp.classloader;
-
-public class StatelessClassLoaderTest {
-	
-	private ClassLoader classloader = new StatelessClassLoader("stateless-classloader-test-jar.jar");
-	
-}
