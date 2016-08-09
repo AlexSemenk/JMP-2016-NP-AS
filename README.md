@@ -33,3 +33,4 @@ Try to reach next goals if possible:
 Close
 
 **Solution**: Task implemented in [stateless-classloader](/stateless-classloader) project. Test jar implemented in [stateless-classloader-test-data](/stateless-classloader-test-data) project. 
+Example for StatelessClassLoader is located in [Run.java](/stateless-classloader/src/main/java/com/epam/jmp/classloader/Run.java) class.
