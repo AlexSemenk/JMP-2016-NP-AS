@@ -11,7 +11,7 @@ public class StatelessClassLoaderTest {
 	
 	@BeforeClass
 	public static void initClassloader() {
-		classloader = new StatelessClassLoader("src/test/resources/stateless-classloader-test-data.jar");
+		classloader = new StatelessClassLoader("src/test/resources/stateless-classloader-test-data-0.1.0.jar");
 	}
 	
 	@Test
