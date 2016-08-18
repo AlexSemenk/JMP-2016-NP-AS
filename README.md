@@ -34,3 +34,46 @@ Close
 
 **Solution**: Task implemented in [stateless-classloader](/stateless-classloader) project. Test jar implemented in [stateless-classloader-test-data](/stateless-classloader-test-data) project. 
 Example for StatelessClassLoader is located in [Run.java](/stateless-classloader/src/main/java/com/epam/jmp/classloader/Run.java) class.
+
+##Module 4. Backend: Multithreading: Classic Model and Concurrency
+
+**Task**: Using suggested class 'Car' create app, which will launch race for several different cars.
+
+1. Create cars with different parameters. Start cars simultaneously and parallel. Observe which finishes first.
+
+2. When the race is over - output the winner message 'Winner is XXXXX!'.
+
+3. Disqualify one of cars from the race after 5 seconds by interrupting it's thread - car code needs to be modified for that.
+
+```java
+public class Car implements Runnable {
+        
+        private static final long MAX_DISTANCE = 10000;
+
+        Logger log = Logger.getLogger(getClass());
+        
+        private long friction; 
+        private long distance; 
+        
+        private String name;
+        
+        public Car(String name, long friction) {
+            this.name = name;
+            this.friction = 100;
+        }
+
+        @Override
+        public void run() {
+            try {
+                while (distance < MAX_DISTANCE) {
+                    Thread.sleep(friction);
+                    distance += 100;
+                    log.info(name + " " + distance);
+                }
+            } catch (InterruptedException e) {
+                log.error(e);
+            }
+        }
+
+    }
+```
