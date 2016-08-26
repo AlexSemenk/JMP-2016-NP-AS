@@ -1,0 +1,9 @@
+package com.epam.jmp.multithreading;
+
+public class Run {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

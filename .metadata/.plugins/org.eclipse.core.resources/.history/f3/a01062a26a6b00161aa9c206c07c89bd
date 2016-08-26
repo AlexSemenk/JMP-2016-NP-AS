@@ -1,0 +1,44 @@
+package com.epam.jmp.multithreading;
+
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class Run {
+
+	private static final Car[] cars = new Car[] {
+		new Car("Mclaren", 5),
+		new Car("Ferrari", 10),
+		new Car("Porsche", 15),
+		new Car("Lamborghini", 20),
+	};
+	
+	public static void main(String[] args) {
+		Lock cup = new ReentrantLock();
+		CountDownLatch latch = new CountDownLatch(cars.length);
+		Thread[] races = new Thread[cars.length];
+		for(int i=0; i<cars.length; i++) {
+			Car car = cars[i];
+			races[i] = new Thread(cars[i]) {
+				@Override
+				public void run() {
+					car.run();
+					latch.countDown();
+					if (cup.tryLock()) {
+						try {
+							latch.await();
+							printWinner(car);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+			};
+		}
+	}
+
+	private static void printWinner(Car winnerCar) {
+		System.out.println("Winner is " + winnerCar.getName() + "!");
+	}
+	
+}
