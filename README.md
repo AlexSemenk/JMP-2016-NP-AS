@@ -83,12 +83,16 @@ public class Car implements Runnable {
 **Task 1 (Simple Deadlock)**: Implement java application to reproduce deadlock below.
 Collect thread dumps.
 
+![alt text](/troubleshooting/img/simple-deadlock.png "Simple Deadlock")
+
 Results of the task:
 -	Java source code
 -	Collected thread dumps
 
 **Task 1 (Realistic Deadlock)**: Implement java application to reproduce deadlock below.
 Collect thread dumps.
+
+![alt text](/troubleshooting/img/realistic-deadlock.png "Realistic Deadlock")
  
 Results of the task:
 -	Java source code
