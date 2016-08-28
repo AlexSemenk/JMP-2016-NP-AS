@@ -77,3 +77,19 @@ public class Car implements Runnable {
 
 }
 ```
+
+##Module 5. Java: Troubleshooting
+
+**Task 1 (Simple Deadlock)**: Implement java application to reproduce deadlock below.
+Collect thread dumps.
+
+Results of the task:
+-	Java source code
+-	Collected thread dumps
+
+**Task 1 (Realistic Deadlock)**: Implement java application to reproduce deadlock below.
+Collect thread dumps.
+ 
+Results of the task:
+-	Java source code
+-	Collected thread dumps
