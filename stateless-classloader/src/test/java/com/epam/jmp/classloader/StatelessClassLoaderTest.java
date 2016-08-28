@@ -2,16 +2,27 @@ package com.epam.jmp.classloader;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class StatelessClassLoaderTest {
 	
-	private static ClassLoader classloader;
+	private static StatelessClassLoader classloader;
 	
 	@BeforeClass
-	public static void initClassloader() {
-		classloader = new StatelessClassLoader("src/test/resources/stateless-classloader-test-data-0.1.0.jar");
+	public static void initClassloader() throws MalformedURLException {
+		URL jarUrl = new URL("jar:file:src/test/resources/stateless-classloader-test-data-0.1.0.jar!/");
+		classloader = new StatelessClassLoader(jarUrl);
+	}
+	
+	@AfterClass
+	public static void closeClassloader() throws IOException {
+		classloader.close();
 	}
 	
 	@Test

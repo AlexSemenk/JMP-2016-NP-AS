@@ -9,7 +9,7 @@ public class Car implements Runnable {
     Logger log = Logger.getLogger(getClass());
 
     private long friction;
-    private long distance; 
+    private long distance;
 
     private String name;
 
@@ -27,6 +27,7 @@ public class Car implements Runnable {
                 log.info(name + " " + distance);
             }
         } catch (InterruptedException e) {
+        	Thread.currentThread().interrupt();
             log.error(e);
         }
     }

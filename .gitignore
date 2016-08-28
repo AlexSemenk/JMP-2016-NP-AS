@@ -1,7 +1,11 @@
-.git
-.metadata
-RemoteSystemsTempFiles
-*/.settings
+### Git ###
+.git/
+### Eclipse ###
+.metadata/
+.recommenders/
+RemoteSystemsTempFiles/
+*/.settings/
 */target/
+*/bin/
 .classpath
 .project
