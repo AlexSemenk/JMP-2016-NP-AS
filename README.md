@@ -89,7 +89,7 @@ Results of the task:
 -	Java source code
 -	Collected thread dumps
 
-**Task 1 (Realistic Deadlock)**: Implement java application to reproduce deadlock below.
+**Task 2 (Realistic Deadlock)**: Implement java application to reproduce deadlock below.
 Collect thread dumps.
 
 ![alt text](/troubleshooting/img/realistic-deadlock.png "Realistic Deadlock")
