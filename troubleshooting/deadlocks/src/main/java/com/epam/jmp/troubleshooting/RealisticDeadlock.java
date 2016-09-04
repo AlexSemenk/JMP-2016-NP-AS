@@ -33,11 +33,15 @@ public class RealisticDeadlock {
 				trySleep(300);
 				println("acquiring lock 1");
 				lock1.lock();
+				trySleep(300);
+				lock1.unlock();
 			}).start();
 			new Thread(() -> {
 				trySleep(300);
 				println("acquiring lock 2");
 				lock2.lock();
+				trySleep(300);
+				lock2.unlock();
 			}).start();
 		}
 	}
