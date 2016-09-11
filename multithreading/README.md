@@ -1,11 +1,9 @@
 ##Module 4. Backend: Multithreading: Classic Model and Concurrency
 
-**Task**: Using suggested class 'Car' create app, which will launch race for several different cars.
+**Task (Simple Car Racing)**: Using suggested class 'Car' create app, which will launch race for several different cars.
 
 1. Create cars with different parameters. Start cars simultaneously and parallel. Observe which finishes first.
-
 2. When the race is over - output the winner message 'Winner is XXXXX!'.
-
 3. Disqualify one of cars from the race after 5 seconds by interrupting it's thread - car code needs to be modified for that.
 
 ```java
