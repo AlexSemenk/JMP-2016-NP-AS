@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Properties;
 
 import com.epam.jmp.jdbc.crud.entity.Friendship;
 import com.epam.jmp.jdbc.crud.entity.Like;
@@ -104,8 +105,11 @@ public class Main {
 	private static final long POSTS_NUMBER = 3_000;
 	private static final long LIKES_NUMBER = 300_000;
 
-	public static void main(String[] args) throws SQLException {	
-		try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
+	public static void main(String[] args) throws SQLException {
+		Properties info = new Properties();
+		info.setProperty("user", USERNAME);
+		info.setProperty("password", PASSWORD);
+		try (Connection connection = DriverManager.getConnection(URL, info)) {
 			createTables(connection);
 			fillTables(connection);
 			queryDatabase(connection);
@@ -119,8 +123,6 @@ public class Main {
 			statement.execute(CREATE_FRIENDSHIPS_TABLE);
 			statement.execute(CREATE_POSTS_TABLE);
 			statement.execute(CREATE_LIKES_TABLE);
-		} catch (SQLException e) {
-			throw e;
 		}
 	}
 
@@ -145,8 +147,6 @@ public class Main {
 				}
 				statement.executeBatch();
 			}
-		} catch (SQLException e) {
-			throw e;
 		}
 	}
 
@@ -163,8 +163,6 @@ public class Main {
 				}
 				statement.executeBatch();
 			}
-		} catch (SQLException e) {
-			throw e;
 		}
 	}
 
@@ -182,8 +180,6 @@ public class Main {
 				}
 				statement.executeBatch();
 			}
-		} catch (SQLException e) {
-			throw e;
 		}
 	}
 
@@ -200,8 +196,6 @@ public class Main {
 				}
 				statement.executeBatch();
 			}
-		} catch (SQLException e) {
-			throw e;
 		}
 	}
 
@@ -220,8 +214,6 @@ public class Main {
 					System.out.println("  " + name);
 				}
 			}
-		} catch (SQLException e) {
-			throw e;
 		}
 	}
 
@@ -229,8 +221,6 @@ public class Main {
 		try (ResultSet result = statement.executeQuery("SELECT COUNT(*) FROM users")) {
 			result.next();
 			return result.getLong(1);
-		} catch (SQLException e) {
-			throw e;
 		}
 	}
 
@@ -238,8 +228,6 @@ public class Main {
 		try (ResultSet result = statement.executeQuery("SELECT COUNT(*) FROM friendships")) {
 			result.next();
 			return result.getLong(1);
-		} catch (SQLException e) {
-			throw e;
 		}
 	}
 
@@ -247,8 +235,6 @@ public class Main {
 		try (ResultSet result = statement.executeQuery("SELECT COUNT(*) FROM posts")) {
 			result.next();
 			return result.getLong(1);
-		} catch (SQLException e) {
-			throw e;
 		}
 	}
 
@@ -256,8 +242,6 @@ public class Main {
 		try (ResultSet result = statement.executeQuery("SELECT COUNT(*) FROM likes")) {
 			result.next();
 			return result.getLong(1);
-		} catch (SQLException e) {
-			throw e;
 		}
 	}
 
@@ -268,8 +252,6 @@ public class Main {
 				names.add(result.getString(1));
 			}
 			return names;
-		} catch (SQLException e) {
-			throw e;
 		}
 	}
 
@@ -279,8 +261,6 @@ public class Main {
 			statement.execute("DROP TABLE posts");
 			statement.execute("DROP TABLE friendships");
 			statement.execute("DROP TABLE users");
-		} catch (SQLException e) {
-			throw e;
 		}
 	}
 
