@@ -1,0 +1,3 @@
+DELETE FROM apple;
+DELETE FROM computer;
+DELETE FROM play;

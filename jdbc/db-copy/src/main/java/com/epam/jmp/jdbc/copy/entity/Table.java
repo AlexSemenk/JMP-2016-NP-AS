@@ -1,4 +1,4 @@
-package com.epam.jmp.jdbc.copy;
+package com.epam.jmp.jdbc.copy.entity;
 
 import java.util.List;
 

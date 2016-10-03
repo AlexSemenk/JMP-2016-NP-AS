@@ -1,32 +1,36 @@
-package com.epam.jmp.jdbc.copy;
+package com.epam.jmp.jdbc.copy.entity;
 
 public class Column implements Comparable<Column> {
 
 	private String name;
-	private String type;
+	private TypeInfo typeInfo;
 	private int size;
-	
+
 	public Column() {
-		
+
 	}
-	
-	public Column(String name, String type, int size) {
+
+	public Column(String name, TypeInfo typeInfo, int size) {
+		super();
 		this.name = name;
-		this.type = type;
-		this.size=  size;
+		this.typeInfo = typeInfo;
+		this.size = size;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getType() {
-		return type;
+
+	public TypeInfo getTypeInfo() {
+		return typeInfo;
 	}
-	public void setType(String type) {
-		this.type = type;
+
+	public void setTypeInfo(TypeInfo typeInfo) {
+		this.typeInfo = typeInfo;
 	}
 
 	public int getSize() {
@@ -41,10 +45,5 @@ public class Column implements Comparable<Column> {
 	public int compareTo(Column other) {
 		return this.name.compareTo(other.name);
 	}
-	
-	@Override
-	public String toString() {
-		return name + " " + type + " " + size;
-	}
-	
+
 }

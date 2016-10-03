@@ -1,7 +1,10 @@
-package com.epam.jmp.jdbc.copy;
+package com.epam.jmp.jdbc.copy.util;
 
 import java.util.Iterator;
 import java.util.List;
+
+import com.epam.jmp.jdbc.copy.entity.Column;
+import com.epam.jmp.jdbc.copy.entity.Table;
 
 public class SqlBuilder {
 
