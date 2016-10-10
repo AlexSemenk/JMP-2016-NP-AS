@@ -1,4 +1,4 @@
-##Module 7. Infrastructure: Build: Maven, Gradle
+##Module 7. Infrastructure: Continuous Integration Concepts (Jenkins)
 
 1. Install Jenkins on local  PC.
 2. Configure Jenkins build for zeyt project.
