@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>Kronos Workforce Ready</description>
+  <displayName>Zeyt</displayName>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.6">
+    <locations>
+      <hudson.scm.SubversionSCM_-ModuleLocation>
+        <remote>svn://kap-wfr-svn.int.kronos.com/zeyt</remote>
+        <credentialsId>f19c9f16-11d1-4303-8b44-81d56dd4261f</credentialsId>
+        <local>.</local>
+        <depthOption>infinity</depthOption>
+        <ignoreExternalsOption>true</ignoreExternalsOption>
+      </hudson.scm.SubversionSCM_-ModuleLocation>
+    </locations>
+    <excludedRegions></excludedRegions>
+    <includedRegions></includedRegions>
+    <excludedUsers></excludedUsers>
+    <excludedRevprop></excludedRevprop>
+    <excludedCommitMessages></excludedCommitMessages>
+    <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
+    <ignoreDirPropChanges>false</ignoreDirPropChanges>
+    <filterChangelog>false</filterChangelog>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <jdk>(System)</jdk>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec>H 22 * * *</spec>
+    </hudson.triggers.TimerTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <customWorkspace>D:\Projects\Kronos\workspace\zeyt</customWorkspace>
+  <builders>
+    <hudson.tasks.Ant plugin="ant@1.4">
+      <targets>BuildEclipseCompiler</targets>
+      <antName>ANT1.9.7</antName>
+      <buildFile>build.xml</buildFile>
+      <properties>tomcat.dir=C:/Tomcat/7.0.39</properties>
+    </hudson.tasks.Ant>
+    <hudson.tasks.BatchFile>
+      <command>updateDB_Sprint.bat odbcName username password</command>
+    </hudson.tasks.BatchFile>
+    <hudson.tasks.BatchFile>
+      <command>updateDB.bat odbcName username password</command>
+    </hudson.tasks.BatchFile>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
