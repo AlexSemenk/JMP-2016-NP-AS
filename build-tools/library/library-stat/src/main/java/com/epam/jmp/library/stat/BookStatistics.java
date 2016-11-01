@@ -23,7 +23,7 @@ public class BookStatistics {
 	}
 	
 	public long counLongBooks() {
-		return library.count(book -> book.getText().length() > 1000);
+		return library.count(book -> book.getText() != null && book.getText().length() > 1000);
 	}
 	
 }

@@ -8,9 +8,15 @@
   <artifactId>library-stat</artifactId>
   <dependencies>
     <dependency>
-		<groupId>com.epam.jmp.library</groupId>
-		<artifactId>library-core</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</dependency>
+      <groupId>com.epam.jmp.library</groupId>
+      <artifactId>library-core</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 </project>
