@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.epam.jmp.library</groupId>
   <artifactId>library</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>pom</packaging>
   <modules>
     <module>library-core</module>
@@ -12,6 +12,20 @@
   <properties>
     <project.build.sourceEncoding>Cp1251</project.build.sourceEncoding>
   </properties>
+  <repositories>
+    <repository>
+      <id>my-central</id>
+      <name>my-releases</name>
+      <url>http://localhost:8081/artifactory/libs-release-local</url>
+    </repository>
+  </repositories>
+  <distributionManagement>
+    <repository>
+      <id>my-central</id>
+      <name>my-releases</name>
+      <url>http://localhost:8081/artifactory/libs-release-local</url>
+    </repository>
+  </distributionManagement>
   <build>
   	<plugins>
   		<plugin>
