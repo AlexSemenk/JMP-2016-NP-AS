@@ -59,7 +59,8 @@ public class Library {
 	}
 
 	public Book getBook(String isbn) {
-		return books.stream().filter(b -> b.getIsbn().equals(isbn)).findFirst().get();
+		Optional<Book> bookOption =  books.stream().filter(b -> b.getIsbn().equals(isbn)).findFirst();
+		return bookOption.isPresent() ? bookOption.get() : null;
 	}
 
 	public boolean hasBook(String isbn) {
