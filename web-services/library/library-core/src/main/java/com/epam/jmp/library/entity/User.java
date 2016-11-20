@@ -2,15 +2,24 @@ package com.epam.jmp.library.entity;
 
 public class User {
 
-	private String nickname;
+	private Long id;
+	private String login;
 	private String email;
 
-	public String getNickname() {
-		return nickname;
+	public Long getId() {
+		return id;
 	}
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
 	public String getEmail() {

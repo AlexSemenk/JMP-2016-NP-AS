@@ -7,6 +7,7 @@ import com.epam.jmp.library.rest.resource.LibraryBookResource;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class LibraryBookResourceImpl implements LibraryBookResource {
 
@@ -17,8 +18,12 @@ public class LibraryBookResourceImpl implements LibraryBookResource {
     }
 
     @Override
-    public List<Book> getAllBooks() {
-        return library.getAllBooks();
+    public List<Book> getAllBooks(String author) {
+        List<Book> books = library.getAllBooks();
+        if (author == null) {
+            return books;
+        }
+        return books.stream().filter(b -> author.equals(b.getAuthor())).collect(Collectors.toList());
     }
 
     @Override

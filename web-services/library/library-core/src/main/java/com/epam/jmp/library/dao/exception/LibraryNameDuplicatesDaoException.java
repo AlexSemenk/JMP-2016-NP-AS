@@ -7,10 +7,8 @@ import com.epam.jmp.library.dao.exception.DaoException;
  */
 public class LibraryNameDuplicatesDaoException extends DaoException {
 
-    private String name;
-
     public LibraryNameDuplicatesDaoException(String name) {
-        super(String.format("Library with name %s already exist", name));
+        super(String.format("Library with name '%s' already exist", name));
     }
 
 }

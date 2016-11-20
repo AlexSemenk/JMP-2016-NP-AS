@@ -14,7 +14,15 @@ import java.util.List;
 
 public class LibraryResourceImpl implements LibraryResource {
 
-    private LibraryService libraryService = new LibraryServiceImpl();
+    private LibraryService libraryService;
+
+    public LibraryResourceImpl() {
+        this(new LibraryServiceImpl());
+    }
+
+    public LibraryResourceImpl(LibraryService libraryService) {
+        this.libraryService = libraryService;
+    }
 
     @Override
     public List<Library> getLibraries() throws ServiceException {
@@ -22,7 +30,7 @@ public class LibraryResourceImpl implements LibraryResource {
     }
 
     @Override
-    public Library getLibray(Long id) throws ServiceException {
+    public Library getLibrary(Long id) throws ServiceException {
         Library library = libraryService.getLibrary(id);
         if (library == null) {
             throw new WebApplicationException(Response.Status.NOT_FOUND);
@@ -43,13 +51,12 @@ public class LibraryResourceImpl implements LibraryResource {
         if (library == null) {
             throw new WebApplicationException(Response.Status.NOT_FOUND);
         }
-        library.setName(newLibrary.getName());
-        library.setDescription(newLibrary.getDescription());
-        libraryService.updateLibrary(library);
+        newLibrary.setId(id);
+        libraryService.updateLibrary(newLibrary);
     }
 
     @Override
-    public void deleteLibray(Long id) throws ServiceException {
+    public void deleteLibrary(Long id) throws ServiceException {
         Library library = libraryService.getLibrary(id);
         if (library == null) {
             throw new WebApplicationException(Response.Status.NOT_FOUND);

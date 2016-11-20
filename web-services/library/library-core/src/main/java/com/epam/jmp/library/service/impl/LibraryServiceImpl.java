@@ -13,7 +13,6 @@ public class LibraryServiceImpl implements LibraryService {
 
     private LibraryDao libraryDao = new LibraryDaoImpl();
 
-
     @Override
     public List<Library> getAllLibraries() throws ServiceException {
         try {
